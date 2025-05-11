@@ -1,4 +1,3 @@
-carta para mi mama
 <!DOCTYPE html>
 <html lang="es">
 <head>
