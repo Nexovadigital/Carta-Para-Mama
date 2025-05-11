@@ -20,8 +20,8 @@
         }
         
         .container {
-            width: 90%;
-            max-width: 500px; /* Limita el ancho máximo en pantallas grandes */
+            width: 95%;
+            max-width: 600px; /* Aumentado el ancho máximo */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -41,12 +41,12 @@
         .envelope {
             position: relative;
             width: 100%;
-            padding-bottom: 70%; /* Mantiene proporción del sobre */
+            padding-bottom: 100%; /* Aumentado para hacer el sobre más cuadrado/grande */
             background: linear-gradient(145deg, #e8a94b, #deab52e6);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
             transition: transform 0.8s ease;
             transform-style: preserve-3d;
-            border-radius: 5px;
+            border-radius: 8px; /* Ligeramente más redondeado */
             overflow: hidden;
             border: 2px solid #b08968;
         }
@@ -87,39 +87,46 @@
         
         .heart-seal {
             position: absolute;
-            width: 40px;
-            height: 40px;
+            width: 50px; /* Tamaño aumentado */
+            height: 50px;
             background-color: #c60505;
             transform: rotate(45deg);
             top: 40%;
             left: 50%;
-            margin-top: -20px;
-            margin-left: -20px;
+            margin-top: -25px;
+            margin-left: -25px;
             cursor: pointer;
             z-index: 15;
             transition: all 0.8s ease;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), inset 0 0 5px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), inset 0 0 8px rgba(0, 0, 0, 0.3); /* Sombra más prominente */
             border: 2px solid #c60505;
+            animation: pulse 2s infinite; /* Animación de pulso para llamar la atención */
         }
         
         .heart-seal:before,
         .heart-seal:after {
             content: "";
             position: absolute;
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             background-color: #c60505;
             border-radius: 50%;
         }
         
         .heart-seal:before {
             top: 0;
-            left: -20px;
+            left: -25px;
         }
         
         .heart-seal:after {
-            top: -20px;
+            top: -25px;
             left: 0;
+        }
+        
+        @keyframes pulse {
+            0% { transform: rotate(45deg) scale(1); }
+            50% { transform: rotate(45deg) scale(1.1); }
+            100% { transform: rotate(45deg) scale(1); }
         }
         
         .heart-seal:hover {
@@ -150,10 +157,10 @@
             width: 90%;
             height: 85%;
             background: linear-gradient(135deg, #fff9f0, #ffffff);
-            padding: 15px;
+            padding: 20px; /* Padding aumentado */
             box-sizing: border-box;
             text-align: center;
-            border-radius: 3px;
+            border-radius: 5px; /* Más redondeado */
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             top: 5%;
             left: 5%;
@@ -162,22 +169,22 @@
             transition: all 1s ease;
             overflow-y: auto;
             border: 1px solid #d8c9a7;
-            font-size: 1em;
+            font-size: 1.1em; /* Texto más grande en general */
         }
         
         .letter p {
             color: #5d4037;
-            line-height: 1.5;
-            margin-bottom: 12px;
+            line-height: 1.6; /* Altura de línea aumentada */
+            margin-bottom: 14px;
             text-align: justify;
-            font-size: 0.9em;
+            font-size: 1.05em; /* Párrafos más grandes */
             font-family: 'Petit Formal Script', cursive;
         }
         
         .letter h1 {
             color: #8d6e63;
-            margin-bottom: 15px;
-            font-size: 1.8em;
+            margin-bottom: 18px;
+            font-size: 2.2em; /* Título más grande */
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
             font-family: 'Tangerine', cursive;
             font-weight: 700;
@@ -186,9 +193,10 @@
         .letter .signature {
             color: #8d6e63;
             font-family: 'Tangerine', cursive;
-            margin-top: 15px;
-            font-size: 1.6em;
+            margin-top: 22px;
+            font-size: 2em;
             font-weight: 700;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
         }
         
         .hearts, .flowers {
@@ -310,16 +318,21 @@
         .image-gallery {
             display: flex;
             justify-content: center;
-            gap: 10px;
-            margin: 15px 0;
+            gap: 15px;
+            margin: 20px 0;
         }
 
         .image-gallery img {
-            width: 80px;
-            height: 80px;
-            border-radius: 10px;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            width: 120px; /* Imágenes más grandes */
+            height: 120px;
+            border-radius: 12px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
             object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .image-gallery img:hover {
+            transform: scale(1.05);
         }
 
         /* Estilos para imágenes decorativas alrededor */
@@ -352,48 +365,72 @@
             left: 80%;
         }
         
-        /* Ajustes específicos para móviles pequeños */
-        @media (max-width: 360px) {
+        /* Ajustes específicos para móviles medianos y pequeños */
+        @media (max-width: 480px) {
             .letter p {
-                font-size: 0.85em;
-                line-height: 1.4;
-                margin-bottom: 8px;
-            }
-            
-            .letter h1 {
-                font-size: 1.6em;
+                font-size: 0.95em;
+                line-height: 1.5;
                 margin-bottom: 10px;
             }
             
+            .letter h1 {
+                font-size: 2em;
+                margin-bottom: 15px;
+            }
+            
             .image-gallery img {
-                width: 60px;
-                height: 60px;
+                width: 100px;
+                height: 100px;
             }
             
             .heart-seal {
-                width: 30px;
-                height: 30px;
-                margin-top: -15px;
-                margin-left: -15px;
+                width: 45px;
+                height: 45px;
+                margin-top: -22.5px;
+                margin-left: -22.5px;
             }
             
             .heart-seal:before,
             .heart-seal:after {
-                width: 30px;
-                height: 30px;
+                width: 45px;
+                height: 45px;
             }
             
             .heart-seal:before {
-                left: -15px;
+                left: -22.5px;
             }
             
             .heart-seal:after {
-                top: -15px;
+                top: -22.5px;
+            }
+            
+            .letter .signature {
+                font-size: 1.8em;
+                margin-top: 15px;
             }
         }
         
-        /* Ajustes para tamaños muy pequeños como iPhone SE */
-        @media (max-height: 568px) {
+        /* Ajustes para móviles muy pequeños */
+        @media (max-width: 360px) {
+            .letter p {
+                font-size: 0.9em;
+                line-height: 1.45;
+                margin-bottom: 8px;
+            }
+            
+            .letter h1 {
+                font-size: 1.8em;
+                margin-bottom: 12px;
+            }
+            
+            .image-gallery img {
+                width: 90px;
+                height: 90px;
+            }
+        }
+        
+        /* Ajustes para pantallas muy pequeñas en altura */
+        @media (max-height: 640px) {
             body {
                 padding: 10px 0;
             }
@@ -403,17 +440,12 @@
             }
             
             .envelope {
-                padding-bottom: 75%;
+                padding-bottom: 90%; /* Un poco menos alto pero sigue siendo grande */
             }
             
             .letter {
                 height: 82%;
-                padding: 10px;
-            }
-            
-            .letter p {
-                font-size: 0.8em;
-                margin-bottom: 6px;
+                padding: 15px;
             }
         }
     </style>
