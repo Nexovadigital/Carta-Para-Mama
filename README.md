@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Carta para Mamá</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Satisfy&family=Montserrat:wght@300;400;500&family=Petit+Formal+Script&family=Tangerine:wght@400;700&display=swap');
@@ -10,26 +10,18 @@
         body {
             font-family: 'Petit Formal Script', cursive;
             background: linear-gradient(135deg, #f5e9d9, #efe5d5, #e9e0cc, #f0ebe2);
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
+            padding: 20px 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow: hidden;
-            overflow-x: hidden;
-            transform: rotate(90deg);
-            transform-origin: left top;
-            width: 100vh;
-            height: 100vw;
-            overflow-x: hidden;
-            position: absolute;
-            top: 0;
-            left: 0;
+            box-sizing: border-box;
         }
         
         .container {
-            width: 100vh; /* Ajusta al ancho de la pantalla en horizontal */
-            height: 100vw; /* Ajusta al alto de la pantalla en horizontal */
+            width: 90%;
+            max-width: 500px; /* Limita el ancho máximo en pantallas grandes */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -48,15 +40,15 @@
 
         .envelope {
             position: relative;
-            width: 80%; /* Ajusta el tamaño del sobre */
-            height: auto;
-            background: linear-gradient(145deg, #e8a94b, #deab52e6); /* Colores cálidos para simular papel antiguo */
+            width: 100%;
+            padding-bottom: 70%; /* Mantiene proporción del sobre */
+            background: linear-gradient(145deg, #e8a94b, #deab52e6);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
             transition: transform 0.8s ease;
             transform-style: preserve-3d;
             border-radius: 5px;
             overflow: hidden;
-            border: 2px solid #b08968; /* Borde oscuro para dar un toque antiguo */
+            border: 2px solid #b08968;
         }
         
         .envelope-front {
@@ -71,7 +63,7 @@
             backface-visibility: hidden;
             clip-path: polygon(0 0, 50% 50%, 100% 0, 100% 100%, 0 100%);
             bottom: 55%;
-            border-bottom: 2px solid #b08968; /* Línea decorativa */
+            border-bottom: 2px solid #b08968;
         }
         
         .envelope-back {
@@ -80,7 +72,7 @@
             height: 100%;
             background: linear-gradient(145deg, #d4b483, #c9a66b);
             border-radius: 5px;
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra interna para simular desgaste */
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
         }
         
         .envelope-border {
@@ -95,38 +87,38 @@
         
         .heart-seal {
             position: absolute;
-            width: 50px;
-            height: 50px;
-            background-color: #c60505; /* Color rojo oscuro para simular cera */
+            width: 40px;
+            height: 40px;
+            background-color: #c60505;
             transform: rotate(45deg);
             top: 40%;
             left: 50%;
-            margin-top: -25px;
-            margin-left: -25px;
+            margin-top: -20px;
+            margin-left: -20px;
             cursor: pointer;
             z-index: 15;
             transition: all 0.8s ease;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), inset 0 0 5px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
-            border: 2px solid #c60505; /* Borde oscuro para mayor realismo */
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), inset 0 0 5px rgba(0, 0, 0, 0.3);
+            border: 2px solid #c60505;
         }
         
         .heart-seal:before,
         .heart-seal:after {
             content: "";
             position: absolute;
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             background-color: #c60505;
             border-radius: 50%;
         }
         
         .heart-seal:before {
             top: 0;
-            left: -25px;
+            left: -20px;
         }
         
         .heart-seal:after {
-            top: -25px;
+            top: -20px;
             left: 0;
         }
         
@@ -156,7 +148,7 @@
         .letter {
             position: absolute;
             width: 90%;
-            height: auto;
+            height: 85%;
             background: linear-gradient(135deg, #fff9f0, #ffffff);
             padding: 15px;
             box-sizing: border-box;
@@ -175,17 +167,17 @@
         
         .letter p {
             color: #5d4037;
-            line-height: 1.7;
-            margin-bottom: 15px;
+            line-height: 1.5;
+            margin-bottom: 12px;
             text-align: justify;
-            font-size: 1.05em;
+            font-size: 0.9em;
             font-family: 'Petit Formal Script', cursive;
         }
         
         .letter h1 {
             color: #8d6e63;
-            margin-bottom: 25px;
-            font-size: 2.2em;
+            margin-bottom: 15px;
+            font-size: 1.8em;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
             font-family: 'Tangerine', cursive;
             font-weight: 700;
@@ -194,8 +186,8 @@
         .letter .signature {
             color: #8d6e63;
             font-family: 'Tangerine', cursive;
-            margin-top: 30px;
-            font-size: 1.8em;
+            margin-top: 15px;
+            font-size: 1.6em;
             font-weight: 700;
         }
         
@@ -215,13 +207,13 @@
             height: 100%;
             pointer-events: none;
             overflow: hidden;
-            z-index: 2; /* Asegúrate de que esté detrás de la carta */
+            z-index: 2;
         }
         
         .heart {
             position: absolute;
-            width: 15px;
-            height: 15px;
+            width: 12px;
+            height: 12px;
             background-color: rgba(255, 82, 82, 0.6);
             transform: rotate(45deg);
             opacity: 0;
@@ -232,19 +224,19 @@
         .heart:after {
             content: "";
             position: absolute;
-            width: 15px;
-            height: 15px;
+            width: 12px;
+            height: 12px;
             background-color: rgba(255, 82, 82, 0.6);
             border-radius: 50%;
         }
         
         .heart:before {
             top: 0;
-            left: -7.5px;
+            left: -6px;
         }
         
         .heart:after {
-            top: -7.5px;
+            top: -6px;
             left: 0;
         }
         
@@ -257,8 +249,8 @@
         
         .flower {
             position: absolute;
-            width: 15px;
-            height: 15px;
+            width: 12px;
+            height: 12px;
             background-color: rgba(233, 30, 99, 0.5);
             border-radius: 50%;
         }
@@ -266,34 +258,23 @@
         .flower:before {
             content: "";
             position: absolute;
-            width: 15px;
-            height: 15px;
+            width: 12px;
+            height: 12px;
             background-color: rgba(233, 30, 99, 0.5);
             border-radius: 50%;
             top: 0;
-            left: -5px;
+            left: -4px;
         }
         
         .flower:after {
             content: "";
             position: absolute;
-            width: 15px;
-            height: 15px;
+            width: 12px;
+            height: 12px;
             background-color: rgba(233, 30, 99, 0.5);
             border-radius: 50%;
-            top: -5px;
+            top: -4px;
             left: 0;
-        }
-        
-        .heart, .flower {
-            width: 10px;
-            height: 10px;
-        }
-
-        .heart:before, .heart:after,
-        .flower:before, .flower:after {
-            width: 10px;
-            height: 10px;
         }
         
         .opened .envelope-front {
@@ -325,129 +306,17 @@
             }
         }
         
-        @media (max-width: 500px) {
-            body {
-                height: auto;
-                overflow-y: auto;
-                padding: 0;
-            }
-
-            .container {
-                width: 95vw;
-                height: auto;
-                margin: 10px auto;
-                perspective: 1000px; /* Reduce la perspectiva para pantallas pequeñas */
-            }
-
-            .envelope {
-                width: 100%;
-                height: auto;
-            }
-
-            .letter {
-                width: 100%;
-                height: auto;
-                padding: 15px;
-                font-size: 0.9em;
-            }
-
-            .letter h1 {
-                font-size: 1.8em;
-            }
-
-            .letter p {
-                font-size: 0.85em;
-            }
-
-            .image-gallery img {
-                width: 70px;
-                height: 70px;
-            }
-
-            .heart-seal {
-                width: 35px;
-                height: 35px;
-                top: 35%;
-                left: 50%;
-                margin-top: -17.5px;
-                margin-left: -17.5px;
-            }
-
-            .heart-seal:before,
-            .heart-seal:after {
-                width: 35px;
-                height: 35px;
-            }
-        }
-
-        @media (orientation: portrait) {
-            .container {
-                width: 90vw;
-                height: auto;
-                margin: 10px auto;
-                perspective: 1000px;
-            }
-
-            .envelope {
-                width: 100%;
-                height: auto;
-            }
-
-            .letter {
-                width: 100%;
-                height: auto;
-                padding: 15px;
-                font-size: 0.9em;
-            }
-
-            .letter h1 {
-                font-size: 1.8em;
-            }
-
-            .letter p {
-                font-size: 0.85em;
-            }
-
-            .heart-seal {
-                width: 35px;
-                height: 35px;
-                top: 35%;
-                left: 50%;
-                margin-top: -17.5px;
-                margin-left: -17.5px;
-            }
-
-            .heart-seal:before,
-            .heart-seal:after {
-                width: 35px;
-                height: 35px;
-            }
-        }
-
-        @media (orientation: landscape) {
-            body {
-                transform: rotate(-90deg);
-                transform-origin: left top;
-                width: 100vh;
-                height: 100vw;
-                overflow-x: hidden;
-                position: absolute;
-                top: 100%;
-                left: 0;
-            }
-        }
-
         /* Estilos para las imágenes dentro de la carta */
         .image-gallery {
             display: flex;
             justify-content: center;
             gap: 10px;
-            margin: 20px 0;
+            margin: 15px 0;
         }
 
         .image-gallery img {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
             border-radius: 10px;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
             object-fit: cover;
@@ -465,8 +334,8 @@
 
         .decorative-images img {
             position: absolute;
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             object-fit: cover;
             opacity: 0.8;
@@ -481,6 +350,71 @@
         .decorative-images img:nth-child(2) {
             top: 70%;
             left: 80%;
+        }
+        
+        /* Ajustes específicos para móviles pequeños */
+        @media (max-width: 360px) {
+            .letter p {
+                font-size: 0.85em;
+                line-height: 1.4;
+                margin-bottom: 8px;
+            }
+            
+            .letter h1 {
+                font-size: 1.6em;
+                margin-bottom: 10px;
+            }
+            
+            .image-gallery img {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .heart-seal {
+                width: 30px;
+                height: 30px;
+                margin-top: -15px;
+                margin-left: -15px;
+            }
+            
+            .heart-seal:before,
+            .heart-seal:after {
+                width: 30px;
+                height: 30px;
+            }
+            
+            .heart-seal:before {
+                left: -15px;
+            }
+            
+            .heart-seal:after {
+                top: -15px;
+            }
+        }
+        
+        /* Ajustes para tamaños muy pequeños como iPhone SE */
+        @media (max-height: 568px) {
+            body {
+                padding: 10px 0;
+            }
+            
+            .container {
+                width: 95%;
+            }
+            
+            .envelope {
+                padding-bottom: 75%;
+            }
+            
+            .letter {
+                height: 82%;
+                padding: 10px;
+            }
+            
+            .letter p {
+                font-size: 0.8em;
+                margin-bottom: 6px;
+            }
         }
     </style>
 </head>
@@ -504,9 +438,7 @@
                 <p>No hay palabras exactas para expresar todo lo que siento por ti, el respeto y el cariño que te tengo. Eres una persona importante en mi vida, alguien que siempre ha estado ahí a su manera.</p>
                 <p>¡Feliz Día de las Madres, mamá! Hoy y siempre, celebro que estés en mi vida y que seas mi madre. Te quiero, a mi manera, más de lo que a veces puedo expresar.</p>
                 <div class="image-gallery">
-                    
                     <img src="WhatsApp Image 2025-05-10 at 11.16.37 PM.jpeg" alt="Imagen 2">
-                    
                 </div>
                 <div class="signature">Con todo mi amor,<br>De Juancito</div>
             </div>
@@ -553,8 +485,8 @@
             function createHeart() {
                 const heart = document.createElement('div');
                 heart.classList.add('heart');
-                heart.style.left = Math.random() * 80 + 10 + '%'; // Posición horizontal alrededor de la carta
-                heart.style.top = Math.random() * 80 + 10 + '%'; // Posición vertical alrededor de la carta
+                heart.style.left = Math.random() * 80 + 10 + '%';
+                heart.style.top = Math.random() * 80 + 10 + '%';
                 heart.style.transform = 'rotate(45deg) scale(' + (Math.random() * 0.5 + 0.5) + ')';
                 heartsContainer.appendChild(heart);
             }
@@ -597,4 +529,3 @@
     </script>
 </body>
 </html>
-``` 
