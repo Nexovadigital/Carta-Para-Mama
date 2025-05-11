@@ -1,4 +1,4 @@
-Carta para mama
+carta para mama
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -17,6 +17,7 @@ Carta para mama
             justify-content: center;
             align-items: center;
             overflow: hidden;
+            overflow-x: hidden;
         }
         
         .container {
@@ -532,4 +533,3 @@ Carta para mama
     </script>
 </body>
 </html>
-``` 
