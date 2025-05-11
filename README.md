@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Carta para Mamá</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Satisfy&family=Montserrat:wght@300;400;500&family=Petit+Formal+Script&family=Tangerine:wght@400;700&display=swap');
@@ -17,18 +17,25 @@
             align-items: center;
             overflow: hidden;
             overflow-x: hidden;
+            transform: rotate(90deg);
+            transform-origin: left top;
+            width: 100vh;
+            height: 100vw;
+            overflow-x: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
         
         .container {
-            position: relative;
-            width: 450px;
-            height: 350px;
-            perspective: 1500px;
-            margin: 20px auto;
+            width: 100vh; /* Ajusta al ancho de la pantalla en horizontal */
+            height: 100vw; /* Ajusta al alto de la pantalla en horizontal */
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            perspective: 1500px;
+            margin: 0 auto;
         }
         
         .envelope,
@@ -41,8 +48,8 @@
 
         .envelope {
             position: relative;
-            width: 100%;
-            height: 100%;
+            width: 80%; /* Ajusta el tamaño del sobre */
+            height: auto;
             background: linear-gradient(145deg, #e8a94b, #deab52e6); /* Colores cálidos para simular papel antiguo */
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
             transition: transform 0.8s ease;
@@ -149,9 +156,9 @@
         .letter {
             position: absolute;
             width: 90%;
-            height: 90%;
+            height: auto;
             background: linear-gradient(135deg, #fff9f0, #ffffff);
-            padding: 20px;
+            padding: 15px;
             box-sizing: border-box;
             text-align: center;
             border-radius: 3px;
@@ -163,6 +170,7 @@
             transition: all 1s ease;
             overflow-y: auto;
             border: 1px solid #d8c9a7;
+            font-size: 1em;
         }
         
         .letter p {
@@ -589,3 +597,4 @@
     </script>
 </body>
 </html>
+``` 
