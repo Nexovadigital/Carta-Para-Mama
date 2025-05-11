@@ -1,7 +1,7 @@
-# Carta-Para-Mama
-<!DOCTYPE html>
-<html lang="es">
-<head>
+# Carta para mama
+# <!DOCTYPE html>
+# <html lang="es">
+# <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carta para Mamá</title>
@@ -31,23 +31,32 @@
             justify-content: center;
         }
         
+        .envelope,
+        .envelope-front,
+        .envelope-back {
+            background-image: url('ruta-a-textura-papel.jpg'); /* Reemplaza con la ruta de tu textura */
+            background-size: cover;
+            background-blend-mode: multiply;
+        }
+
         .envelope {
             position: relative;
             width: 100%;
             height: 100%;
-            background-color: #e8dcbf;
+            background: linear-gradient(145deg, #e8a94b, #deab52e6); /* Colores cálidos para simular papel antiguo */
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
             transition: transform 0.8s ease;
             transform-style: preserve-3d;
             border-radius: 5px;
             overflow: hidden;
+            border: 2px solid #b08968; /* Borde oscuro para dar un toque antiguo */
         }
         
         .envelope-front {
             position: absolute;
             width: 100%;
             height: 45%;
-            background: linear-gradient(145deg, #e8dcbf, #d9ceaf);
+            background: linear-gradient(145deg, #d4b483, #c9a66b);
             z-index: 10;
             transform-origin: top;
             transition: transform 1s ease;
@@ -55,13 +64,33 @@
             backface-visibility: hidden;
             clip-path: polygon(0 0, 50% 50%, 100% 0, 100% 100%, 0 100%);
             bottom: 55%;
+            border-bottom: 2px solid #b08968; /* Línea decorativa */
+        }
+        
+        .envelope-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, #d4b483, #c9a66b);
+            border-radius: 5px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra interna para simular desgaste */
+        }
+        
+        .envelope-border {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px solid #b08968;
+            border-radius: 5px;
+            box-sizing: border-box;
+            pointer-events: none;
         }
         
         .heart-seal {
             position: absolute;
             width: 50px;
             height: 50px;
-            background-color: #e22424;
+            background-color: #c60505; /* Color rojo oscuro para simular cera */
             transform: rotate(45deg);
             top: 40%;
             left: 50%;
@@ -70,7 +99,8 @@
             cursor: pointer;
             z-index: 15;
             transition: all 0.8s ease;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), inset 0 0 5px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+            border: 2px solid #c60505; /* Borde oscuro para mayor realismo */
         }
         
         .heart-seal:before,
@@ -79,7 +109,7 @@
             position: absolute;
             width: 50px;
             height: 50px;
-            background-color: #e22424;
+            background-color: #c60505;
             border-radius: 50%;
         }
         
@@ -391,23 +421,22 @@
             <div class="envelope-bottom"></div>
             <div class="letter">
                 <h1>Para mi querida Mamá</h1>
-                <p>En este día tan especial, quiero decirte que eres el regalo más grande que la vida me ha dado. Tu presencia ilumina cada uno de mis días, y tu amor incondicional me ha sostenido en cada paso de mi camino.</p>
-                <p>Desde mis primeros latidos en tu vientre hasta hoy, has sido la fuerza invisible que me impulsa y el refugio al que siempre puedo volver. Gracias por ser mi guía, mi confidente, mi apoyo inquebrantable y mi ejemplo a seguir.</p>
-                <p>Cada sacrificio, cada noche sin dormir, cada palabra de aliento, cada abrazo sanador... todo ha formado la persona que soy hoy. Me has enseñado a ser fuerte frente a las adversidades, a perseverar cuando todo parece imposible, y sobre todo, a amar sin límites ni condiciones.</p>
-                <p>Admiro tu fortaleza, tu paciencia infinita y esa capacidad única que tienes para ver lo mejor en cada persona, incluso cuando ni nosotros mismos podemos verlo. Tu sabiduría ha sido mi brújula, y tu ternura, el bálsamo para mis heridas.</p>
-                <p>Quiero pedirte disculpas desde lo más profundo de mi corazón por aquellas veces en las que no he sido o hecho lo que esperabas de mí. Por esos momentos en que mi terquedad no me permitió ver la sabiduría en tus consejos, o cuando mi inmadurez me llevó a tomar decisiones que te preocuparon y te quitaron el sueño.</p>
-                <p>Perdóname por las lágrimas que he causado en tus ojos, por las canas que aparecieron prematuramente por mis rebeldías, y por las veces que no valoré tus sacrificios como debía. A veces olvidamos que antes de ser madres, eres una mujer con sueños, miedos y anhelos propios.</p>
-                <p>Te pido perdón por aquellos momentos en que te hice sentir que no te escuchaba, cuando en realidad, tus palabras estaban grabándose en mi alma. Lamento las veces en que elegí el camino difícil a pesar de tus advertencias, obligándote a recoger mis pedazos con amor infinito.</p>
-                <p>Prometo esforzarme cada día para ser ese hijo/a que mereces, para hacerte sentir orgullosa y para devolverte aunque sea una fracción de todo el amor que me has dado. Prometo valorar más tus consejos, estar más presente en tu vida y demostrarte que todas tus enseñanzas han dado fruto.</p>
-                <p>Tu corazón es mi primer hogar, y tu amor es mi mayor fortaleza. Cuando pienso en la palabra "amor", veo tu rostro; cuando busco seguridad, recuerdo tus abrazos; cuando necesito valor, evoco tus palabras de aliento.</p>
-                <p>No hay palabras suficientes en ningún idioma para expresar cuánto te amo, te respeto y te admiro. Eres mi heroína sin capa, mi ángel en la tierra, el reflejo más puro del amor divino.</p>
-                <p>¡Feliz Día de las Madres, mamá querida! Hoy y siempre, celebro el milagro de tenerte en mi vida y el privilegio de llamarte "madre". Te amo infinitamente, más allá de lo que las palabras puedan expresar.</p>
-                    <!-- Contenedor de imágenes dentro de la carta -->
-    <div class="image-gallery">
-        
-        <img src="WhatsApp Image 2025-05-10 at 11.16.37 PM.jpeg" alt="Imagen 2">
-        
-    </div>
+                <p>Mamá, hoy en este día, quiero decirte que aunque la vida nos ha puesto pruebas y hemos tenido nuestros momentos, tú eres un regalo importante en mi vida. Tu presencia siempre ha marcado mis días, y sé que tu amor, a tu manera, me ha acompañado en cada paso.</p>
+                <p>Desde que estaba en tu vientre hasta hoy, has sido una fuerza en mi vida y un lugar al que siempre puedo volver. Gracias por guiarme, por escucharme cuando lo haya hecho, por apoyarme a tu modo y por ser el ejemplo que has podido ser.</p>
+                <p>Cada esfuerzo, cada noche que te preocupaste, cada palabra que me diste, cada abrazo... todo eso ha contribuido a la persona que soy. Me has enseñado a ser fuerte ante las dificultades, a seguir adelante cuando no es fácil, y también a querer, a mi manera.</p>
+                <p>Admiro tu fortaleza, tu paciencia cuando la has tenido, y esa capacidad de ver algo bueno en las personas. Tu experiencia ha sido una guía, y tu cariño, cuando lo necesitado, ha sido un alivio.</p>
+                <p>Quiero pedirte perdón desde lo más profundo por esas veces en las que no he sido o hecho lo que esperabas. Por esos momentos en que mi forma de ser no me permitió ver tu punto de vista, o cuando mis decisiones te preocuparon.</p>
+                <p>Perdóname por las preocupaciones que te he dado, por las veces que quizás no valoré tus esfuerzos como debías. A veces olvidamos que antes de ser madres, son personas con sus propias vidas y sus propias luchas.</p>
+                <p>Te pido perdón por aquellos momentos en que sentiste que no te escuchaba, aunque en el fondo, tus palabras siempre han tenido un peso. Lamento las veces en que elegí mi propio camino a pesar de tus consejos, y tú estuviste ahí para ayudarme a levantarme.</p>
+                <p>Prometo intentar cada día ser ese hijo/a que te haga sentir orgullosa a mi manera, y tratar de valorar más tus consejos y estar presente en tu vida. Quiero que veas que tus enseñanzas han tenido un impacto en mí.</p>
+                <p>Tu cariño es como un hogar para mí, un lugar de referencia, y sé que a tu manera siempre me has querido fuerte. Cuando pienso en ese afecto, pienso en ti; cuando necesito sentirme seguro, recuerda tus gestos; cuando busco fuerza, recuerda tus palabras.</p>
+                <p>No hay palabras exactas para expresar todo lo que siento por ti, el respeto y el cariño que te tengo. Eres una persona importante en mi vida, alguien que siempre ha estado ahí a su manera.</p>
+                <p>¡Feliz Día de las Madres, mamá! Hoy y siempre, celebro que estés en mi vida y que seas mi madre. Te quiero, a mi manera, más de lo que a veces puedo expresar.</p>
+                <div class="image-gallery">
+                    
+                    <img src="WhatsApp Image 2025-05-10 at 11.16.37 PM.jpeg" alt="Imagen 2">
+                    
+                </div>
                 <div class="signature">Con todo mi amor,<br>De Juancito</div>
             </div>
             <div class="envelope-front"></div>
