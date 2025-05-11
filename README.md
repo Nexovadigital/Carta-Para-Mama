@@ -3,7 +3,7 @@ Carta para mama
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Carta para Mamá</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Satisfy&family=Montserrat:wght@300;400;500&family=Petit+Formal+Script&family=Tangerine:wght@400;700&display=swap');
@@ -308,11 +308,11 @@ Carta para mama
                 opacity: 0.8;
             }
             50% {
-                transform: rotate(45deg) translateY(-20px);
+                transform: rotate(45deg) translateY(-10px);
                 opacity: 1;
             }
             100% {
-                transform: rotate(45deg) translateY(-50px);
+                transform: rotate(45deg) translateY(-20px);
                 opacity: 0;
             }
         }
@@ -321,12 +321,14 @@ Carta para mama
             body {
                 height: auto;
                 overflow-y: auto;
+                padding: 0;
             }
 
             .container {
-                width: 90vw;
+                width: 95vw;
                 height: auto;
                 margin: 10px auto;
+                perspective: 1000px; /* Reduce la perspectiva para pantallas pequeñas */
             }
 
             .envelope {
@@ -337,12 +339,12 @@ Carta para mama
             .letter {
                 width: 100%;
                 height: auto;
-                padding: 10px;
+                padding: 15px;
                 font-size: 0.9em;
             }
 
             .letter h1 {
-                font-size: 1.5em;
+                font-size: 1.8em;
             }
 
             .letter p {
@@ -350,19 +352,23 @@ Carta para mama
             }
 
             .image-gallery img {
-                width: 80px;
-                height: 80px;
+                width: 70px;
+                height: 70px;
             }
 
             .heart-seal {
-                width: 40px;
-                height: 40px;
+                width: 35px;
+                height: 35px;
+                top: 35%;
+                left: 50%;
+                margin-top: -17.5px;
+                margin-left: -17.5px;
             }
 
             .heart-seal:before,
             .heart-seal:after {
-                width: 40px;
-                height: 40px;
+                width: 35px;
+                height: 35px;
             }
         }
 
@@ -453,13 +459,12 @@ Carta para mama
             const heartsContainer = document.getElementById('hearts');
             const flowersContainer = document.getElementById('flowers');
             
-            // Crear corazones decorativos
-            for (let i = 0; i < 10; i++) {
+            // Crear menos corazones y flores para mejorar el rendimiento
+            for (let i = 0; i < 5; i++) {
                 createHeart();
             }
-            
-            // Crear flores decorativas
-            for (let i = 0; i < 8; i++) {
+
+            for (let i = 0; i < 4; i++) {
                 createFlower();
             }
             
@@ -527,3 +532,4 @@ Carta para mama
     </script>
 </body>
 </html>
+``` 
