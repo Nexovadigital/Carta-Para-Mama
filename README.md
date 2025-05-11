@@ -1,4 +1,4 @@
-carta para mama
+carta para mi mama
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -370,6 +370,63 @@ carta para mama
             .heart-seal:after {
                 width: 35px;
                 height: 35px;
+            }
+        }
+
+        @media (orientation: portrait) {
+            .container {
+                width: 90vw;
+                height: auto;
+                margin: 10px auto;
+                perspective: 1000px;
+            }
+
+            .envelope {
+                width: 100%;
+                height: auto;
+            }
+
+            .letter {
+                width: 100%;
+                height: auto;
+                padding: 15px;
+                font-size: 0.9em;
+            }
+
+            .letter h1 {
+                font-size: 1.8em;
+            }
+
+            .letter p {
+                font-size: 0.85em;
+            }
+
+            .heart-seal {
+                width: 35px;
+                height: 35px;
+                top: 35%;
+                left: 50%;
+                margin-top: -17.5px;
+                margin-left: -17.5px;
+            }
+
+            .heart-seal:before,
+            .heart-seal:after {
+                width: 35px;
+                height: 35px;
+            }
+        }
+
+        @media (orientation: landscape) {
+            body {
+                transform: rotate(-90deg);
+                transform-origin: left top;
+                width: 100vh;
+                height: 100vw;
+                overflow-x: hidden;
+                position: absolute;
+                top: 100%;
+                left: 0;
             }
         }
 
